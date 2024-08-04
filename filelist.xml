@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="EK Rebalance" modversion="1.0.0.18" corepackage="False" steamworkshopid="2959897868" gameversion="1.5.9.1">
+  <Item file="%ModDir%/Items/Diving/ek_divinggear.xml" />
+  <Item file="%ModDir%/Items/Tools/ekutility_tools.xml" />
+  <Item file="%ModDir%/Items/Weapons/ekutility_weapons.xml" />
+  <Item file="%ModDir%/Items/Weapons/ek_attachments.xml" />
+  <Item file="%ModDir%/Items/Weapons/ek_attachments_depricated.xml" />
+  <Item file="%ModDir%/Items/Jobgear/ek_jobgear.xml" />
+  <Text file="%ModDir%/Items/Texts/English.xml" />
+</contentpackage>

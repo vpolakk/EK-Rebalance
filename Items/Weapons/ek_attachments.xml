@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="ek_lightattachment" aliases="taclight,light attachment,flashlight attachment,ekcompatibility_taclight" category="Equipment" Tags="smallitem,ekcompatibility_taclight" canbepicked="true" cargocontaineridentifier="ek_weapons_case" scale="0.32" impactsoundtag="impact_metal_light">
+      <Price baseprice="300" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="3" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="1.1" sold="true" minavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="15">
+        <Item identifier="aluminium" />
+        <Item identifier="thorium" />
+        <Item identifier="lead" />
+        <Item identifier="lightcomponent" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="titaniumaluminiumalloy" />
+        <Item identifier="thorium" />
+        <Item identifier="lead" />
+        <Item identifier="lightcomponent" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:EK Mods for 1.x.x.x%/Items/Weapons/weapons_ek.png" sourcerect="368,496,48,16" depth="0.54" />
+      <Body width="38" height="14" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand,Head" holdpos="30,-50" aimpos="60,0" handle1="-20,0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" targettype="Contained" Condition="-0.2">
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+        <LightComponent LightColor="1.0,1.0,1.0,1.0" Flicker="0.02" range="1200" powerconsumption="10" IsOn="true">
+          <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.0,1.0" />
+          <IsActive targetcontaineditem="true" condition="gt 1.0" />
+        </LightComponent>
+        <LightComponent LightColor="1.0,1.0,1.0,1.0" range="1200" powerconsumption="10" IsOn="true" flicker="0.8" flickerspeed="1.0" pulsefrequency="0.1" pulseamount="0.5">
+          <LightTexture texture="%ModDir:EK Mods for 1.x.x.x%/Lights/lightcone_gigantic.png" origin="0.0, 0.5" size="1.0,1.0" />
+          <IsActive targetcontaineditem="true" condition="lte 1.0" />
+        </LightComponent>
+      </Holdable>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery">
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+        </Containable>
+      </ItemContainer>
+      <AiTarget sightrange="3500" />
+    </Item>
+    <Item name="" identifier="ek_laserattachment" aliases="laser attachment, laser sight attachment,ekcompatibility_lasersight" category="Equipment" Tags="smallitem,ekcompatibility_lasersight,tool,provocative" canbepicked="true" cargocontaineridentifier="ek_weapons_case" scale="0.32" impactsoundtag="impact_metal_light">
+      <Price baseprice="150" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="3" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="1.1" sold="true" minavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="15">
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="fpgacircuit" />
+        <RequiredItem tag="lightcomponent" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="aluminium" />
+        <Item identifier="fpgacircuit" />
+        <Item identifier="lightcomponent" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:EK Mods for 1.x.x.x%/Items/Weapons/weapons_ek.png" sourcerect="368,480,48,16" depth="0.54" />
+      <Body width="38" height="14" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand,Head" holdpos="30,-50" aimpos="60,0" handle1="-20,0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" targettype="Contained" Condition="-0.2">
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+        <LightComponent LightColor="1,0.0,0.0,1" Flicker="0.02" range="700" powerconsumption="10" IsOn="true">
+          <LightTexture texture="%ModDir:EK Mods for 1.x.x.x%/Lights/laser_light.png" origin="0.0, 0.5" size="1.0,0.3" />
+          <IsActive targetcontaineditem="true" condition="gt 1.0" />
+        </LightComponent>
+        <LightComponent LightColor="1,0.0,0.0,1" Flicker="0.8" range="700" powerconsumption="10" IsOn="true" flickerspeed="1.0" pulsefrequency="0.1" pulseamount="0.5">
+          <LightTexture texture="%ModDir:EK Mods for 1.x.x.x%/Lights/laser_light.png" origin="0.0, 0.5" size="1.0,0.3" />
+          <IsActive targetcontaineditem="true" condition="lte 1.0" />
+        </LightComponent>
+      </Holdable>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery">
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+        </Containable>
+      </ItemContainer>
+      <AiTarget sightrange="50" />
+    </Item>
+    <Item name="" identifier="ek_suppressor" aliases="suppressor,silencer,ekcompatibility_suppressor" category="Equipment" Tags="smallitem,weapon,gun,ekcompatibility_suppressor" canbepicked="true" cargocontaineridentifier="ek_weapons_case" scale="0.32" impactsoundtag="impact_metal_light">
+      <Price baseprice="80" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="3" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="1.1" sold="true" minavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="rubber" />
+        <RequiredSkill identifier="weapons" level="60" />
+      </Fabricate>
+      <Deconstruct time="8">
+        <Item identifier="steel" />
+        <Item identifier="rubber" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:EK Mods for 1.x.x.x%/Items/InventoryIcons.png" sourcerect="128,192,64,64" />
+      <Sprite texture="%ModDir:EK Mods for 1.x.x.x%/Items/Weapons/weapons_ek.png" sourcerect="128,384,80,16" depth="0.54" />
+      <Body width="67" height="16" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" holdangle="-90" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name="" identifier="ek_sonarattachment" aliases="sonar attachment, sonar scope attachment,ekcompatibility_sonarscope" category="Equipment" Tags="smallitem,ekcompatibility_sonarscope,sonar,provocative" canbepicked="true" cargocontaineridentifier="ek_weapons_case" scale="0.32" impactsoundtag="impact_metal_light">
+      <Price baseprice="180" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="3" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="1.1" sold="true" minavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="electrical" level="60" />
+        <RequiredItem identifier="dementonite" amount="4" />
+        <RequiredItem identifier="fpgacircuit" />
+        <RequiredItem identifier="handheldsonar" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="fpgacircuit" />
+        <Item identifier="handheldsonar" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:EK Mods for 1.x.x.x%/Items/InventoryIcons.png" sourcerect="448,256,64,64" />
+      <Sprite texture="%ModDir:EK Mods for 1.x.x.x%/Items/Weapons/weapons_ek.png" sourcerect="448,896,80,48" depth="0.54" />
+      <Body width="64" height="32" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" holdangle="-90" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnContained" targettype="Parent,This" tags="sonarscope_charged" duration="0.10" setvalue="true" comparison="And">
+          <Conditional HasStatusTag="neq sonarscope_discharged" />
+          <Conditional HasStatusTag="use_charge" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" targettype="This,Contained" duration="0.05" tags="use_charge" forceplaysounds="true" setvalue="true">
+          <Conditional TargetContainer="true" HasStatusTag="sonarscoped" />
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" targettype="Contained" Condition="-0.5" interval="1" disabledeltatime="true" forceplaysounds="true">
+          <Conditional HasStatusTag="use_charge" />
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" targettype="Parent,Contained" interval="1" duration="0.05" tags="sonarscope_discharged" setvalue="true" forceplaysounds="true">
+          <RequiredItem items="mobilebattery" type="Contained" matchonempty="true" />
+        </StatusEffect>
+      </Holdable>
+      <AiTarget sight="500" staticsight="true" />
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery" />
+      </ItemContainer>
+    </Item>
+  </Items>
+</Override>
